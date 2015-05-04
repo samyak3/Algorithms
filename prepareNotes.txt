@@ -1,0 +1,652 @@
+1. export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
+
+2. sudo apt-get install vnc4server xinetd
+
+3. sudo ifconfig eth0 ip
+
+4. sudo ifconfig eth0 netmask 255.255.255.0
+
+5. sudo route add default gateway  107.108.199.1 and for dns entry write nameserver dnsip in /etc/resolv.conf file
+
+6. sudo apt-get install openssh-server
+
+7. useradd username -m -s "/bin/bash"
+
+8.  atoi, atol, atoll, atoq - convert a string to an integer
+
+9. To create a stream socket in the Internet domain the following call might be used:
+
+   s = socket(AF_INET, SOCK_STREAM, 0);
+10. Graphics Contexts  Objects to encapsulate drawing properties
+
+11.TCP port 6000 is also used by XDMCP for remote x connections. You can shut this off (stop it from listening) by running this command:
+startx  -nolisten tcp
+
+12. Framebuffer Layer
+(FB)
+
+    X Server layer providing implementations of the X graphics functions to draw on a modern framebuffer device. FB is optimized to minimize memory accesses at the expense of additional CPU instructions; this works well on modern machines because memory access is the system performance bottle neck
+
+13.A "screen" represents the binding of a graphics device (Device section) and a monitor (Monitor section).
+
+14.  chattr changes the file attributes on a Linux file system.
+
+15. When the X server is requested to render drawing primitives, it does so by calling drawing functions through the graphics context's operation function pointer table (i.e., the GCOps functions). These functions render the basic graphics operations such as drawing rectangles, lines, text or copying pixmaps. Default routines are provided either by the MI layer, which draws indirectly through a simple span interface, or by the framebuffer layers (e.g., CFB, MFB, FB), which draw directly to a linearly mapped frame buffer. 
+
+16. All threads within a process share the same global memory . 
+
+17. How can I find out which graphics card I have in my PC?
+Print
+
+The easiest way is to run the DirectX Diagnostic Tool:
+
+   1. Click Start.
+   2. On the Start menu, click Run.
+   3. In the Open box, type "dxdiag" (without the quotation marks) , and then click OK.
+   4. The DirectX Diagnostic Tool opens. Click the Display tab.
+   5. On the Display tab, information about your graphics card is shown in the Device section. You can see the name of your card, as well as how much video memory it has.
+
+18 DISPLAY : hostname:displaynumber.ScreenThis variable is used to indicate to graphical applications where to display the actual graphical user interface, the value consists of 3 parts: A host-name followed by a colon (:), a display number followed by a dot (.) and a screen number. The host-name part can be used to have the graphical output sent to a remote machine over the network. It can be omitted when the output is meant for an X server running on the local machine.
+
+************** The display number allows selecting among multiple X servers running on the same machine (Ubuntu uses multiple X servers to enable multiple graphical desktop sessions).
+
+************************************** Although the screen number is used to select among multiple physical screen that are managed by the same X server, it is rarely set to anything other then "0" nowadays. Manually setting the "DISPLAY" environment variable's value is rarely needed nowadays since it can be automatically and intelligently adjusted by many applications such as "GDM" and "SSH" when needed. 
+
+19. nolisten TCP : change /etc/gdm/gdm.schemas DisallowTCP to default false
+	this option enables listening for Xserver
+
+20. IPv4 uses a  32-bit address scheme allowing for a total of 2^32 addresses (just over 4 billion addresses).
+While increasing the pool of addresses is one of the most often-talked about benefit of IPv6, there are other important technological changes in IPv6 that will improve the IP protocol:
+
+    * No more NAT (Network Address Translation)
+    * Auto-configuration
+    * No more private address collisions
+    * Better multicast routing
+    * Simpler header format
+    * Simplified, more efficient routing
+    * True quality of service (QoS), also called "flow labeling"
+    * Built-in authentication and privacy support
+    * Flexible options and extensions
+    * Easier administration (say good-bye to DHCP)
+
+IPv6 addresses are 128-bit IP address written in hexadecimal and separated by colons.
+
+21.Types of host/target development setups.....
+21.a Linked Setup::The kernel could be available via Trivial File Transfer Protocol(TFTP). The root file system could also be NFS-mounted instead of being of on a storage media in the target. Using NFS-mounted rfs is actually perfect during development ,because it avoids having to constantly copy program modifications between the host and the target.
+
+22.Static Variables : In computer programming, a static variable is a variable that has been allocated statically  whose lifetime extends across the entire run of the program. This is in contrast to the more ephemeral automatic variables, whose storage is allocated and deallocated on the call stack; and in contrast to objects whose storage is dynamically allocated.
+
+23.Interrupt Latency : interrupt latency is the time between the generation of an interrupt by a device and the servicing of the device which generated the interrupt.
+
+24.Semaphore : In computer science, a semaphore is a protected variable or abstract data type that constitutes a classic method of controlling access by several processes to a common resource in a parallel programming environment. A semaphore generally takes one of two forms: binary and counting. A binary semaphore is a simple "true/false" (locked/unlocked) flag that controls access to a single resource. A counting semaphore is a counter for a set of available resources.
+
+25. The fact that inode numbers are unique only within any filesystem is the reason that they do not work across filesystems and partitions.
+
+26.. A block device is a device that can host a filesysytem.
+
+27.strace : trace system calls and signals.
+
+28.fork - create a child process
+RETURN VALUE
+       On  success,  the PID of the child process is returned in the parent, and 0 is returned in the child.  On failure, -1 is
+       returned in the parent, no child process is created, and errno is set appropriately.
+
+29.dmesg - print or control the kernel ring buffer
+
+30. In the case of a write through cache , the processor updates the main memory in sync with the cache entry update.In write back cache , the main memory location is updated only when the cache entry is evicted from the cache.
+
+31 tar -xvf   ----untar.
+32.tar -cvf  filename.tar filenametobetared
+33.This clientserver terminology  the user's terminal being the server and the applications being the clients  often confuses new X users, because the terms appear reversed. But X takes the perspective of the application, rather than that of the end-user: X provides display and I/O services to applications, so it is a server; applications use these services, thus they are clients.
+
+The communication protocol between server and client operates network-transparently: the client and server may run on the same machine or on different ones, possibly with different architectures and operating systems
+
+34.find . -iname Chapter1 -type f  ( iname for case insensitive file/directory searching)
+
+35. find /usr -iname "Chapter*" -type f
+
+36./usr/local/lib/pkg-config 
+
+37. to enable directfb for backend surface for cairo during configure we need to 
+a. export directfb_LIBS=/home/Ankur/DirectFB-1.4.0/lib
+b.export directfb_CFLAGS=/home/Ankur/DirectFB-1.4.0/include
+./configure --enable-directfb=yes
+
+38. mount permission may fail for a remote pc if firewall is not disabled...
+    use service iptables stop ......
+39. tasks so far - compiling tinyX for DTV...mapping red button to start Xserver(tinyx binary - Xfbdev through a script in mtd_rwarea) Now I should be able to run a wxWidget app on DTV ... this app will depend on X for display ..
+so gtk should be compiled with X being display options 
+
+40./home/Ankur/valancia_TV_Stack/BP_Conf/2010/Valencia_US/Build - path for Makefile.inc ... this is where all the include paths are added.. for us we made some modifications in Viewerapp.cpp(TVViewer module) by adding gtk application on red button press ... So we needed gtk include files for compilation ... So we added path for gtk include files in macro LEEUM_INC_DIR .....and succesfully compiled gtk app ..However gtk app further requires atk and other thing to be included as well ...
+
+41. home/alok/arm_v7_vfp_le/bin/arm_v7_vfp_le-gcc -g -shared -Wl,-soname,libcomposite.so.0     -o libcomposite.so.0.0 *.o -lc ----making a shared libray for target(DTV) 
+
+42. Options while configuring GTK are :
+
+43 Using execve system call  
+#include <stdio.h>
+#include <stdlib.h>
+
+void main()
+{
+
+int x , y , z;
+execve("./mybin",(char*)0);
+}
+           
+44.aclocal -----???????????///
+
+45.Cross compilation -----do_config.sh for gtk 
+export HOST=arm-linux//the place where the compiled binary/library has to run .it may be TV eBook Tab remocon or ne other device.
+export BUILD=the machine where compilation/build is taking place ...........normally the i386 machine 
+export PREFIX=/home/alok/TV/libDir
+export LDFLAGS="-L/home/alok/TV/libDir  -lz -latk-1.0 -lXext -lXrender -lX11 -lxcb -lgobject-2.0 -lgmodule-2.0 -lglib-2.0 -liconv -L/home/alok/valancia_TV_Stack/OP_Product/Graphic/JPEG/Lib/VALENCIA_Static/ -ljpeg /home/alok/valancia_TV_Stack/OP_Product/Protocol/OPENSSL/LIB/VALENCIA/libcrypto.a /home/alok/valancia_TV_Stack/OP_Product/Protocol/OPENSSL/LIB/VALENCIA/libssl.a " \
+export CFLAGS="-ggdb -I/home/alok/valancia_TV_Stack/OP_Product/Graphic/JPEG/include -I/home/alok/valancia_TV_Stack/OP_Product/Util/ZLIB/ZLIB_1.2.3/Src/VALENCIA/zlib-1.2.3 -I/home/alok/TV/incDir"
+./configure \
+--host=$HOST \
+--build=$BUILD \
+--prefix=$PREFIX \
+--with-gdktarget=x11 \
+--without-libtiff \
+--disable-glibtest \
+--disable-largefile \
+--disable-xkb   \
+--disable-cups  \
+--disable-xinerama      \
+--disable-perf  \
+--with-included-loaders=gif,png,xpm  CC=arm_v7_vfp_le-gcc LD=arm_v7_vfp_le-ld LDD=arm_v7_vfp_le-ldd   CXX=arm_v7_vfp_le-g++ STRIP=arm_v7_vfp_le-strip 
+
+46. tty is a Unix command that prints to standard output the name of the file connected to standard input. 
+
+47. locale : In computing, locale is a set of parameters that defines the user's language, country and any special variant preferences that the user wants to see in their user interface. Usually a locale identifier consists of at least a language identifier and a region identifier.
+
+48. Virtual file sysytem : kernel is responsible for invoking the call specific to each file system.
+
+49. cpp, cc1 and as are the GNU's preprocessor, compiler proper and assembler, respectively. They are a part of the standard GCC distribution.
+
+50. The loader is a program called execve, which loads the code and data of the executable object file into memory and then runs the program by jumping to the first instruction.
+
+51.    The various sections in the ELF relocatable object file are:
+
+      .text, the machine code of the compiled program.
+    *
+
+      .rodata, read-only data, such as the format strings in printf statements.
+    *
+
+      .data, initialized global variables.
+    *
+
+      .bss, uninitialized global variables. BSS stands for block storage start, and this section actually occupies no space in the object file; it is merely a placer holder.
+    *
+
+      .symtab, a symbol table with information about functions and global variables defined and referenced in the program. This table does not contain any entries for local variables; those are maintained on the stack.
+    *
+
+      .rel.text, a list of locations in the .text section that need to be modified when the linker combines this object file with other object files.
+    *
+
+      .rel.data, relocation information for global variables referenced but not defined in the current module.
+    *
+
+      .debug, a debugging symbol table with entries for local and global variables. This section is present only if the compiler is invoked with a -g option.
+    *
+
+      .line, a mapping between line numbers in the original C source program and machine code instructions in the .text section. This information is required by debugger programs.
+    *
+
+      .strtab, a string table for the symbol tables in the .symtab and .debug sections.
+ 
+52. pure virtual function: overide them in derived class otherwise the derived class will become abstract as well...
+
+53. #ifdef in header file
+
+54. static member functions - belong to class rather than objects ... same as static data..... 
+
+55.Samba Server - access linux thru Windows......
+
+56.mount - t nfs -o nolock 107.108.*.*:/path /mnt
+
+57.fsrrestore /dev/stl0/15 exe.img
+
+58.exportfs -a -v ..... /etc/exports
+
+59.modprobe - loads a driver module...
+
+60. mksquashfs  - creating squash file system for flash memory may be..........
+
+61.network_init.sh script for bringing network up...  ifconfig eth0 IP107.108.199.67
+
+62. service nfs status
+
+63.service nfs start
+
+64.drivers - ko files????
+
+65.cat /mtd_exe/partition.txt
+
+66.Esc+vne filemname for opening two files in vi editor.......
+
+67. /etc/grub.conf
+
+68. uname -r
+
+69. dml - memory leak detection.
+
+70. duma - crash detection bcoz of memory leak.....
+
+
+71. A thread is spawned by defining a function and its arguments which will be processed in the thread. The purpose of using the POSIX thread library in your software is to execute software faster. 
+
+72.Each thread has a unique: 
+Thread ID 
+set of registers, stack pointer 
+stack for local variables, return addresses 
+signal mask 
+priority 
+
+73.pthread functions return "0" if OK. 
+
+74. text consoles and serial ports are examples of char devices.
+
+75. A block device is something that can hold a filesystem. 	
+
+76 . Any network transaction is made through an interface,that is , a device that is able to exchange data with other hosts . Usually an interface id a hardware device but might be a pure software device, like the loopback interface.
+
+77.The ioctl function manipulates the underlying device parameters of special files. In particular, many operating characteristics of character special files (e.g. terminals) may be controlled with ioctl requests.
+
+78.Frame buffer resolutions are maintained using the utility fbset.
+
+79. /dev/fb* also allows several ioctls on it, by which lots of information about the hardware can be queried and set.
+
+80 class CFrameBuffer
+{
+
+void*   m_FrameBuffer;
+struct  fb_fix_screeninfo m_FixInfo;
+struct  fb_var_screeninfo m_VarInfo;
+int 	m_FBFD;
+
+int InitFB()
+{
+    int iFrameBufferSize;
+    /* Open the framebuffer device in read write */
+    m_FBFD = open(FB_NAME, O_RDWR);
+    if (m_FBFD < 0) {
+    	printf("Unable to open %s.\n", FB_NAME);
+    	return 1;
+    }
+    /* Do Ioctl. Retrieve fixed screen info. */
+    if (ioctl(m_FBFD, FBIOGET_FSCREENINFO, &m_FixInfo) < 0) {
+    	printf("get fixed screen info failed: %s\n",
+    		  strerror(errno));
+    	close(m_FBFD);
+    	return 1;
+    }
+    /* Do Ioctl. Get the variable screen info. */
+    if (ioctl(m_FBFD, FBIOGET_VSCREENINFO, &m_VarInfo) < 0) {
+    	printf("Unable to retrieve variable screen info: %s\n",
+    		  strerror(errno));
+    	close(m_FBFD);
+    	return 1;
+    }
+
+    /* Calculate the size to mmap */
+    iFrameBufferSize = m_FixInfo.line_length * m_VarInfo.yres;
+    printf("Line length %d\n", m_FixInfo.line_length);
+    /* Now mmap the framebuffer. */
+    m_FrameBuffer = mmap(NULL, iFrameBufferSize, PROT_READ | PROT_WRITE,
+    				 MAP_SHARED, m_FBFD,0);
+    if (m_FrameBuffer == NULL) {
+    	printf("mmap failed:\n");
+    	close(m_FBFD);
+    	return 1;
+    }
+    return 0;
+}
+
+void CloseFB()
+{
+    munmap(m_FrameBuffer,0);
+    close(m_FBFD);
+}
+
+};
+
+81.http://dmx.sourceforge.net/dmx.html
+
+82. A thread-safe function can be called simultaneously from multiple threads, even when the invocations use shared data, because all references to the shared data are serialized.
+
+83. A reentrant function can also be called simultaneously from multiple threads, but only if each invocation uses its own data.
+
+84.Virtual File Allocation Table (VFAT) is operating system that handles long file names, which otherwise could not be handled by the original file allocation table file allocation table  (FAT) programming. A file allocation table is the means by which the operating system keeps track of where the pieces of a file are stored on a hard disk. Since the original FAT for the Disk Operating System  (DOS) assumed file names were limited to a length of eight characters, a program extension was needed to handle the longer names allowed in Windows 95. Microsoft refers to this extension as a driver  since other operating systems may need to install and use it in order to access FAT partitions written by Windows 95 and later Windows systems. The VFAT extension runs in protected mode, uses 32-bit code, and uses VCACHE for disk cache. 
+
+85 . Harvard Architecture :  different program n data memory 
+Von Neuman :: both are in same memory and accesible through a common bus.
+
+86.Memory :: Register--Cache--Main Memory--Disk
+
+87. Temporal Locality : If a location is referenced , there is a high likelihood that it will be refernced again in the near future (time).
+
+88. Spatial Locality : if you reference instruction  or data at a certain location , there is a high likelihood that nearby addresses will also be referenced .
+
+89.  qmake -o Makefile hello.pro( qmake command in use to generate Makefile...it takes a .pro file as input)
+hello.pro would like this :
+CONFIG += qt debug
+ HEADERS += hello.h
+ SOURCES += hello.cpp
+ SOURCES += main.cpp
+
+90. Typing the interrupt character (often Ctrl+C) at the keyboard will result in the SIGINT signal being sent to the foreground process,that is the program currently running .
+
+91. int QApplication::exec ()   [static]
+Enters the main event loop and waits until exit() is called, then returns the value that was set to exit() (which is 0 if exit() is called via quit()).
+
+It is necessary to call this function to start event handling. The main event loop receives events from the window system and dispatches these to the application widgets.
+
+Generally, no user interaction can take place before calling exec(). As a special case, modal widgets like QMessageBox can be used before calling exec(), because modal widgets call exec() to start a local event loop.
+
+92. The select() and poll() methods can be a powerful tool when youre multiplexing network sockets. Specifically, these methods will indicate when a procedure will be safe to execute on an open file descriptor without any delays.For instance, a programmer can use these calls to know when there is data to be read on a socket.
+
+93. Internet Application :: protocol used
+1.ping : ICMP
+2.traceroute : ICMP
+
+3.BOOTP : UDP
+4.DHCP : UDP
+5.NTP : UDP
+6.TFTP : UDP
+7.SNMP : UDP
+
+8.SMTP(electromic mail) : TCP
+9.Telnet(remote login) : TCP
+10.SSH : TCP
+11. FTP:TCP
+12.HTTP : TCP
+13.NNTP(network news) : TCP
+14.LPR(remote printing) : TCP
+
+94. fdm is an analog technique that can be applied when the bandwidth of a link is greater than the combined bandwidth of the signals to be transmitted.
+
+95.WDM is designed to use the high bandwidth capability of fiber-optic cable.
+
+96.tdm is a 
+ 
+97. Threads do not have the concept of "return value" because threads run asynchronously.
+
+98. Broadcasting is supported only for datagram sockets and only on networks that support the concept of a broadcast message(e.g. Ethernet ,token ring,etc). You cannot broadcast on a point to point link or any connection based transport protocol such as SCTP or TCP.
+
+99. five input functions: 1. read 2. readv 3.recv 4.recvfrom 5.recvmsg.
+      five output functions: 1.write 2.writev 3.send 4.sendto 5.sendmsg		
+
+100.A Race condition is usually when multiple processes  are accessing data that is shared among them,but the correct outcome depends on the execution order of the processes. Rce conditions are always a concern a with threads programming since so much data is shared among all the threads( e.g all the global variables).
+
+101.The audio stream is compressed using an audio codec such as MP3, Vorbis or AAC.
+
+The video stream is compressed using a video codec such as H.264 or V8.
+
+Encoded audio and video streams are assembled in a container bitstream such as FLV, WebM, ASF or ISMA.
+
+The bitstream is delivered from a streaming server to a streaming client using a transport protocol, such as MMS or RTP.
+
+The streaming client may interact with the streaming server using a control protocol, such as MMS or RTSP.
+
+102. The system call is the fundamental interface between an application and the Linux kernel.
+
+103.intermittent ::Stopping and starting at irregular intervals
+
+104.Not all network technologies support broadcast addressing; for example, neither X.25 nor frame relay have broadcast capability, nor is there any form of Internet-wide broadcast. Broadcasting is largely confined to local area network (LAN) technologies, most notably Ethernet and token ring, where the performance impact of broadcasting is not as large as it would be in a wide area network.
+
+105. Broadcasting is normally limited to a LAN,whereas multicasting can be used on a LAN or across a WAN.
+
+106.     *IP multicasting provides the capability for an application to send a single IP datagram that a group of hosts in a network can receive.  The hosts that are in the group may reside on a single subnet or may be on different subnets that have been connected by multicast capable routers.
+    *Hosts may join and leave groups at any time.  There are no restrictions on the location or number of members in a host group.  A class D Internet address in the range 224.0.0.1 to 239.255.255.255 identifies a host group.
+    *An application program can send or receive multicast datagrams by using the socket() API and connectionless SOCK_DGRAM type sockets.  Each multicast transmission is sent from a single network interface, even if the host has more than one multicasting-capable interface.
+    *It is a one-to-many transmission method.  You cannot (look)use connection-oriented sockets of type SOCK_STREAM for multicasting.(look)
+    *When a socket of type SOCK_DGRAM is created, an application can use the setsockopt() function to control the multicast characteristics associated with that socket.  The setsockopt() function accepts the following IPPROTO_IP level flags:
+
+       1.IP_ADD_MEMBERSHIP:  Joins the multicast group specified.
+       2.IP_DROP_MEMBERSHIP:  Leaves the multicast group specified.
+       3.IP_MULTICAST_IF:  Sets the interface over which outgoing multicast datagrams are sent.
+       4.IP_MULTICAST_TTL:  Sets the Time To Live (TTL) in the IP header for outgoing multicast datagrams.  By default it is set to 1.  TTL of 0 are not transmitted on any sub-network.  Multicast datagrams with a TTL of greater than 1 may be delivered to more than one sub-network, if there are one or more multicast routers attached to the first sub-network.
+       5.IP_MULTICAST_LOOP:  Specifies whether or not a copy of an outgoing multicast datagram is delivered to the sending host as long as it is a member of the multicast group.
+
+107. Multicast code in the Linux kernel is always surrounded by #ifdef CONFIG_IP_MULTICAST / #endif pairs, so that you can include/ exclude it from your kernel based on your needs (this inclusion/exclusion is done at compile time, as you probably know if reading that section... #ifdefs are handled by the preprocessor. The decision is made based in what you selected when doing either a make config, make menuconfig or make xconfig). 
+
+108. In order to start understanding what an operating system is, consider what happens when you type an apparently simple command:
+
+$ ls
+Mail            c               images          perl
+docs            tcl
+$ 
+
+
+The $ is a prompt put out by a login shell (in this case bash). This means that it is waiting for you, the user, to type some command. 
+
+					Typing ls causes the keyboard driver to recognize that characters have been typed. The keyboard driver passes them to the shell which processes that command by looking for an executable image of the same name. It finds that image, in /bin/ls. Kernel services are called to pull the ls executable image into virtual memory and start executing it. The ls image makes calls to the file subsystem of the kernel to find out what files are available. The filesystem might make use of cached filesystem information or use the disk device driver to read this information from the disk. It might even cause a network driver to exchange information with a remote machine to find out details of remote files that this system has access to (filesystems can be remotely mounted via the Networked File System or NFS). Whichever way the information is located, ls writes that information out and the video driver displays it on the screen.
+
+All of the above seems rather complicated but it shows that even most simple commands reveal that an operating system is in fact a co-operating set of functions that together give you, the user, a coherent view of the system.
+
+drivers in the scene for a apparantely simple command 'ls'. :
+1. keyboard driver recognizes the keys pressed and passes them to shell.
+2. disk driver to get filesystem info/network driver in case of NFS mounted files.
+3. video driver to display the info on screen.
+
+109 . Windows:: set command at the  command prompt would display all the environment variables.
+
+110.Checked build environment(debug as well) vs free build environment.
+
+111.An INF file (stands for information) or Setup Information file, is a plain text file used by Microsoft Windows for installation of software and drivers. INF files are most commonly used for installing device drivers for hardware components. 
+
+112.select system call allows a program  to be advised of input and output activity on several open file descriptors and sockets at once.
+
+113. When video mirroring is active, each time the system draws to the primary video device at a location inside the mirrored area, a copy of the draw operation is run on the mirrored video device in real time. With this mirroring scheme, you can simultaneously draw the same output to several video devices. Because the driver allocates memory dynamically for targets, the number of display devices that your system can support depends on how much free memory you have at mirror time. 
+
+114.The Microsoft Windows  .sys files and Linux .ko modules contain loadable device drivers. The advantage of loadable device drivers is that they can be loaded only when necessary and then unloaded, thus saving kernel memory.
+
+115.Display mirroring technology is widely employed by remote desktop applications such as: NetMeeting, PC Anywhere, VNC, Webex, etc. Mirroring is a technically superior method when compared to primitive screen grabbing, because it allows the capture of only the minimally updated regions and retrieves the data directly, bypassing the intermediate copy. Using the DFMirage video hook driver solves the problem of reliably and efficiently detecting modified areas on the screen. This driver may be used transparently with office, CAD and other types of business and utility applications. An example is the open-source TightVNC application which uses the DFMirage driver with great success. 
+
+116.Using the mirror driver greatly increases the speed and reliability of
+    updates, and also desreases CPU utilization on the server.
+
+117. Header files should be included in a cpp/c file and not a header file. It is a good programming practice that avoids unnecessary compilation.
+
+118. In computer science, message queues and mailboxes are software-engineering components used for interprocess communication, or for inter-thread communication within the same process. They use a queue for messaging  the passing of control or of content.
+					Message queues provide an asynchronous communications protocol, meaning that the sender and receiver of the message do not need to interact with the message queue at the same time. Messages placed onto the queue are stored until the recipient retrieves them.
+
+Most message queues have set limits on the size of data that can be transmitted in a single message. Those that do not have such limits are known as zombies
+
+119.message queue : functions::
+	1. msgget
+	2. msgsnd
+	3. msgrcv
+	4. msgctl
+
+120. msconfig : use this command in run window to change start up programs in windows.
+
+121. run mstsc in run window for Remote Desktop Connection.
+
+122. The /proc filesystem acts as an interface to internal data structures in the kernel. It can be used to obtain information about the system and to change certain kernel parameters at runtime (sysctl).
+
+The effort of the /proc filesystem is to provide an easy way to view kernel and information about currently running processes. As a result, some commands (ps for example) read /proc directly to get information about the state of the system. The premise behind /proc is to provide such information in a readable manner instead of having to invoke difficult to understand system calls.
+
+123.egd : Entropy Gathering Daemon.
+
+124.man -k XOpenDisplay
+
+125. Microsoft Presentation Framework : Windows Presentation Foundation (WPF) is a next-generation presentation system for building Windows client applications with visually stunning user experiences. With WPF, you can create a wide range of both standalone and browser-hosted applications
+		 Microsoft Communication Foundation:  a part of the .NET Framework that provides a unified programming model for rapidly building service-oriented applications that communicate across the web and the enterprise. 
+
+126.ioctl SIOCGIFCONF : names of all network interfaces can be retrieved using SIOCGIFCONF ioctl.
+		
+127.ioctl SIOCGIFINDEX :Retrieve the interface index of the interface into  ifr_ifindex.
+
+128. ioctl SIOCGIFADDR : Uses the Linux SIOCGIFADDR ioctl to find the IP address associated with a network interface.
+
+129. ioctl SIOCGIFHWADDR : to get the mac address.
+
+130.FTP servers use TCP ports 20 and 21 to send and receive information
+
+131.  #define DBG_PRINT(fmt, args...)		\
+	do {							\
+	printf("\n Shadow err: %13s: \n %4d (%-12s) " fmt "\n", \
+	__FILE__, __LINE__, __FUNCTION__,  ##args);	\
+	} 
+132. write root(username) pts/0
+
+133. When sending, a socket bound with INADDR_ANY binds to the default IP address, which is that of the lowest-numbered interface.
+
+134. If both the sender and receiver for a multicast group are on the same local broadcast subnet, then the routers do not need to be involved in the process., and communication can take place directly. If, however, the sender and receiver are on different subnets, then a multicast routing protocol needs to be involved in setting up multicast forwarding state on the tree between the sender and the receivers.
+
+135. SO_SNDBUF, I think, only matters for TCP (in UDP, whatever you send goes directly out to the network)
+
+136. Windowed flow Control : The amount of unacknowledged data at the sender can never exeed the receiver's advertised window.
+
+137. In computer networking, a raw socket is a socket that allows direct sending and receiving of network packets by applications, bypassing all encapsulation in the networking software of the operating system.
+
+138. Wireless networks, by their very nature, are prone to suffer data loss from noise and in­terference.  
+
+139. The Internet Group Management Protocol (IGMP) is a communications protocol used by hosts and adjacent routers on IP networks to establish multicast group memberships.
+
+140. The x86 family of processor supportd two types of addressing scheme memory mapped I/O and port mapped I/O.
+	The instructions for accessing memory is used for accessing memory mapped device registers.
+	Locations within the I/O address space are known as ports or port numbers.
+	A 16 bit address bus is used for accessing the locations within this I/O address space.
+	The processor provides two separate instructions for reading and writing from/to location in the I/O address space.
+	The IN instruction is used for reading from the device registers.
+	The OUT instruction is used for writing to the device registers.
+	Accessing memory mapped device register is faster than I/O mapped device registers.
+	Only 16- bits of the 32-bit address bus can be used to address port mapped device registers.
+	Port mapping technique is only preferred for small sized buffers.
+
+141. Data Transfer techniques : To tranfer data between the device driver and the physical device different techniques like programmed I/O(PIO) , Direct memory access (DMA) and shared buffers are used.
+
+	1)PIO is most common technique used by devices that need to transfer only few bytes at a time.
+	PIO technique is the slowest as compared to other techniques however usage of this technique is the simplest.
+	
+	2) DMA : data transfer takes place between the main memory of the computer and the device without involving the CPU.
+	Since CPU is not involved the speed of the data transfer increases significantly.
+	This mechanism is used by device that  needs to rapidly transfer huge amount of data.
+
+	3)Shared Buffer : the memory present on the device is directly mapped into the memory address space.
+	Good example of such device is the video card.
+
+
+
+142. The buffer cache
+
+Reading from a disk is very slow compared to accessing (real) memory. In addition, it is common to read the same part of a disk several times during relatively short periods of time. For example, one might first read an e-mail message, then read the letter into an editor when replying to it, then make the mail program read it again when copying it to a folder. Or, consider how often the command ls might be run on a system with many users. By reading the information from disk only once and then keeping it in memory until no longer needed, one can speed up all but the first read. This is called disk buffering, and the memory used for the purpose is called the buffer cache.
+
+Since memory is, unfortunately, a finite, nay, scarce resource, the buffer cache usually cannot be big enough (it can't hold all the data one ever wants to use). When the cache fills up, the data that has been unused for the longest time is discarded and the memory thus freed is used for the new data.
+
+Disk buffering works for writes as well.	On the one hand, data that is written is often soon read again (e.g., a source code file is saved to a file, then read by the compiler), so putting data that is written in the cache is a good idea. On the other hand, by only putting the data into the cache, not writing it to disk at once, the program that writes runs quicker. The writes can then be done in the background, without slowing down the other programs.
+
+Most operating systems have buffer caches (although they might be called something else), but not all of them work according to the above principles. Some are write-through: the data is written to disk at once (it is kept in the cache as well, of course). The cache is called write-back if the writes are done at a later time. Write-back is more efficient than write-through, but also a bit more prone to errors: if the machine crashes, or the power is cut at a bad moment, or the floppy is removed from the disk drive before the data in the cache waiting to be written gets written, the changes in the cache are usually lost. This might even mean that the filesystem (if there is one) is not in full working order, perhaps because the unwritten data held important changes to the bookkeeping information.
+
+Because of this, you should never turn off the power without using a proper shutdown procedure or remove a floppy from the disk drive until it has been unmounted (if it was mounted) or after whatever program is using it has signaled that it is finished and the floppy drive light doesn't shine anymore. The sync command flushes the buffer, i.e., forces all unwritten data to be written to disk, and can be used when one wants to be sure that everything is safely written. In traditional UNIX systems, there is a program called update running in the background which does a sync every 30 seconds, so it is usually not necessary to use sync. Linux has an additional daemon, bdflush, which does a more imperfect sync more frequently to avoid the sudden freeze due to heavy disk I/O that sync sometimes causes.
+
+Under Linux, bdflush is started by update. There is usually no reason to worry about it, but if bdflush happens to die for some reason, the kernel will warn about this, and you should start it by hand (/sbin/update).
+
+The cache does not actually buffer files, but blocks, which are the smallest units of disk I/O (under Linux, they are usually 1 KB).	This way, also directories, super blocks, other filesystem bookkeeping data, and non-filesystem disks are cached.
+
+The effectiveness of a cache is primarily decided by its size. A small cache is next to useless: it will hold so little data that all cached data is flushed from the cache before it is reused. The critical size depends on how much data is read and written, and how often the same data is accessed. The only way to know is to experiment.
+
+If the cache is of a fixed size, it is not very good to have it too big, either, because that might make the free memory too small and cause swapping (which is also slow).	To make the most efficient use of real memory, Linux automatically uses all free RAM for buffer cache, but also automatically makes the cache smaller when programs need more memory.
+
+Under Linux, you do not need to do anything to make use of the cache, it happens completely automatically. Except for following the proper procedures for shutdown and removing floppies, you do not need to worry about it.
+
+143.The frequency hopping spread spectrum technique uses M different carrier frequencies that are modulated by the source signal.At one moment , the signal modulates one carrier ferequency,at the next moment,the signal modulates another carrier frequency.
+144.The direct sequence spread spectrum expands the bandwidth of a signal by replacing each data bit eith n bits using a spreading code.In other words,each bit is assigned a code of n bits,called chips.
+
+145. April 1::how to get the notification that the system resolution has changed in linux (In my case EBWBApp run time scenario a user may change system resolution)
+
+The XRRScreenChangeNotify  event is sent to clients that ask to be informed whenever the root window configuration changes. Configuration changes may include resolution, physical size, subpixel order (see XRender(3) ), and rotation. Note that changes to any or all of these could occur due to external events (user control in the X server, a different monitor/flat panel display being hot-plugged) and is not only the result of a protocol/library request to the X server. 
+
+To receive ConfigureNotify events, set the StructureNotifyMask bit in the event-mask attribute of the window or the SubstructureNotifyMask bit in the event-mask attribute of the parent window (in which case, configuring any child generates an event). 
+
+XEvents
+
+Events in X are things like the mouse buttons being clicked, or the keys on the keyboard being pressed. The events can either be KeyPress or KeyRelease for keyboard control devices. When the window is resized the application is sent a ConfigureNotify event. When the window is below another window and is raised it is sent an Expose event, which would usually redraw the application. When the window is initially created an Expose event is sent.
+
+The first step is to declare an X event.
+
+XEvent report;
+
+
+The next step is to tell the X server what kind of input the program wants to process.
+
+
+XSelectInput (dis, win, ExposureMask | KeyPressMask | ButtonPressMask);
+
+The first two arguments should be understood. The ExposureMask tells the X server that you want to process Expose events. The KeyPressMask tells the X server that you want to process KeyPress events. The ButtonPressMask tells the X server that you want to process mouse button events.
+
+This is a simple event loop that outputs I have been exposed when the window first appears, and when the window is raised.
+
+
+while (1)  {
+  XNextEvent(dis, &report);
+  switch  (report.type) {
+    case Expose:   
+      fprintf(stdout, "I have been exposed.\n");
+/*A local program function to redraw the window should be called.*/
+    break;
+    }
+}
+
+This event loop is rather simple. It only checks for an expose event. XNextEvent waits for an event to occur. You can use other methods to get events, which are documented in the manual page for XNextEvent.
+
+Now you will learn how to check if an event is a certain key being pressed. The first step is to put case KeyPress: in your switch for report.type. Place it in a similar manner as case Expose.
+
+
+case KeyPress:
+  if (XLookupKeysym(&report.xkey, 0) == XK_space)  {
+  fprintf (stdout, "The space bar was pressed.\n");
+  }
+break;
+
+XLookupKeysym checks if the key pressed was equal to XK_space, and if it was it outputs a message. The keyboard key names can be found in /usr/X11R6/include/X11/keysymdef.h. More keyboard events can be processed in a similar manner. 
+
+
+
+Xorg mailing list reply ::
+man 3 xrandr
+
+XRRQueryExtension to get the event code
+and process the XrrScreenChangeNotifyEvent and XrrNotify events.
+
+If you are using a higher level toolkit they will emit a signal when this happens.
+
+146. XNextEvent blocks until an event appears on the event queue, whereupon the application processes it appropriately. 
+
+147. 
+DHCP Server alots the IP addresses to computers, while DNS server resolves them.
+
+You need DHCP Server if you do not want to manually maintain IP Addresses or
+you have less IP Addresses than number of machines you have, as dynamic DHCP Server will
+recycle IP Addresses on machines.
+
+DNS Server is needed for resolving hostnames to their IP addresses.
+
+148. Electromagnetic waves : In the order of increasing frequency : 
+1. Radio
+2. Microwave
+3. Infrared
+4. Visible
+5. Soft XRays
+6. hard Xrays
+7. Gamma rays.
+
+149. In 802.11 b/g you have a choice of channels (11 channels in North America, 13 channels in Europe) where each channel is a range of frequencies. Furthermore, there is tremendous overlap among adjacent channels (take a quick look at the image at the bottom of this page). Its important to make note of the overlap because a wireless device that transmits in the frequency range of channel 1 not only interferes with channel 1 but probably also is wrecking havoc on channels 2, 3, etc. 
+
+150. To join the WLAN, the AP and all wireless clients must be configured to use the same SSID.
+
+151. One impediment to increasing the speed of wireless communications comes from Wi-Fi's use of a shared communications medium, so a WAP is only able to use somewhat less than half the actual over-the-air rate for data throughput. Thus a typical 54 MBit/s wireless connection actually carries TCP/IP data at 20 to 25 Mbit/s.
+
+152. Myth #5: "I can overcome interference by having a high density of access points."
+The inexpensive nature of 802.11 access points makes it tempting to deploy them with very high density. For example, some networks are being deployed with an AP in every room. This type of deployment has the benefit of greatly increasing the capacity of the network by allowing "spatial reuse" of the spectrum. It seems intuitive that by having more APs spread around, it's more likely that a client will be able to operate successfully even when interference is present.
+Unfortunately, when you deploy a dense network of access points, it's necessary to reduce the transmit signal power of each of the access points. If you don't reduce the power, the access points generate interference to each other, a phenomenon known as co-channel interference. The reduction in the transmit power of the access point exactly offsets the potential benefit of interference immunity. So in the end, the interference immunity of a network with a dense deployment of access points is not significantly better than that of a less dense deployment.
+Summary: It's reasonable to over-design your network for capacity, but a high density of access points is no panacea for interference.
+
+153. Client programs are informed of events. Events may either be side effects of a request (for example, restacking windows generates Expose events) or completely asynchronous (for example, from the keyboard). A client program asks to be informed of events. Because other applications can send events to your application, programs must be prepared to handle (or ignore) events of all types.
+
+Input events (for example, a key pressed or the pointer moved) arrive asynchronously from the server and are queued until they are requested by an explicit call (for example, XNextEvent() or XWindowEvent()). In addition, some library functions (for example, XRaiseWindow()) generate Expose and ConfigureRequest events. These events also arrive asynchronously, but the client may wish to explicitly wait for them by calling XSync() after calling a function that can cause the server to generate events.

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeLite_Workspace Name="Stoic" Database="./Stoic.tags">
+  <Project Name="Stoic" Path="Stoic.project" Active="No"/>
+  <Project Name="Just" Path="../Just.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Project Name="Stoic" ConfigName="Debug"/>
+      <Project Name="Just" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="no">
+      <Project Name="Stoic" ConfigName="Release"/>
+      <Project Name="Just" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>

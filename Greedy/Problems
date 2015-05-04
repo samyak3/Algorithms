@@ -1,0 +1,40 @@
+1. Activity Selection problem
+
+---------------------------------------------------------------------------------------------------------------------
+
+2.In the mathematical field of graph theory, a spanning tree T of an undirected graph G is a subgraph that includes all of the vertices of G 
+that is a tree.
+
+---------------------------------------------------------------------------------------------------------------------
+
+3.Applications of Minimum Spanning Tree Problem
+
+Network design.
+– telephone, electrical, hydraulic, TV cable, computer, road
+
+Indirect applications.
+– max bottleneck paths
+– LDPC codes for error correction
+– image registration with Renyi entropy
+– learning salient features for real-time face verification
+– reducing data storage in sequencing amino acids in a protein
+– model locality of particle interactions in turbulent fluid flows
+– autoconfig protocol for Ethernet bridging to avoid cycles in a network
+
+Cluster analysis
+k clustering problem can be viewed as finding an MST and deleting the k-1 most
+expensive edges.
+
+---------------------------------------------------------------------------------------------------------------------
+
+4.
+
+---------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------

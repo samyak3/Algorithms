@@ -1,0 +1,77 @@
+Q 1. Given an array A[] and a number x, check for pair in A[] with sum as x
+
+o(nlogn) -- sorted array sum from both sides
+O(n) -- use hashing , O(R) -- space where R is range of numbers.
+-----------------------------------------------------------------------------------------------------------------
+Q 2.Majority element 
+
+O(n) -- Moore's voting algorithm
+O(nlogn) -- sort , then check middle n first element /last element
+-----------------------------------------------------------------------------------------------------------------
+Q 3.Find the Number Occurring Odd Number of Times
+
+Do bitwise XOR of all the elements. Finally we get the number which has odd occurrences.
+-----------------------------------------------------------------------------------------------------------------
+Q 4. Find the Missing Number
+You are given a list of n-1 integers and these integers are in the range of 1 to n. 
+There are no duplicates in list. One of the integers is missing in the list. 
+Write an efficient code to find the missing integer.
+
+
+1) XOR all the array elements, let the result of XOR be X1.
+2) XOR all numbers from 1 to n, let XOR be X2.
+3) XOR of X1 and X2 gives the missing number.
+
+-------------------------------------------------------------------------------------------------------------------
+Q 5.Median of 2 sorted arrays 
+
+O(logn) -- compare median of both arrays , 
+if both are equal then return the same else again compare the medians of remaining arrays
+-------------------------------------------------------------------------------------------------------------------
+Q 6.Count Inversions in an array
+
+Time Complexity: O(nlogn)
+Algorithmic Paradigm: Divide and Conquer -- Merge Sort
+-------------------------------------------------------------------------------------------------------------------
+Q 7 Find duplicates in O(n) time and O(1) extra space
+-------------------------------------------------------------------------------------------------------------------
+Q 8 Which sorting algorithm makes minimum number of memory writes?
+Minimizing the number of writes is useful when making writes to some huge data set is very expensive, 
+such as with EEPROMs or Flash memory, where each write reduces the lifespan of the memory.
+
+Cycle Sort  In Cycle Sort, each value is either written zero times, if it’s already in its correct position, 
+or written one time to its correct position
+-------------------------------------------------------------------------------------------------------------------
+Q 9 Stable sort vs unstable sort 
+
+-------------------------------------------------------------------------------------------------------------------
+Q 10 Interpolation search works better than Binary Search for a sorted and uniformly distributed array
+
+-------------------------------------------------------------------------------------------------------------------
+Q 11 Maximum of all subarrays of size k (Added a O(n) method)
+
+ use Dequeue
+-------------------------------------------------------------------------------------------------------------------
+Q 12 Find whether an array is subset of another array 
+
+sort and do binary search
+
+hashing 
+-------------------------------------------------------------------------------------------------------------------
+Q 13 Median in a stream of integers (running integers)
+-------------------------------------------------------------------------------------------------------------------
+Q 14 Given an unsorted array of nonnegative integers, find a continous subarray which adds to a given number. Google
+-----------------------------------------------------------------------------------------------------------------
+Q 15 Find the smallest positive number missing from an unsorted array 
+A O(n) time and O(1) extra space solution:
+We use array elements as index. To mark presence of an element x, we change the value at the index x to negative.
+-----------------------------------------------------------------------------------------------------------------
+Q 16 The Celebrity Problem
+Another classical problem.
+
+In a party of N people, only one person is known to everyone.
+ Such a person may be present in the party,
+  if yes, (s)he doesn’t know anyone in the party. 
+  We can only ask questions like “does A know B? “.
+   Find the stranger (celebrity) in minimum number of questions.
+   -----------------------------------------------------------------------------------------------------------------

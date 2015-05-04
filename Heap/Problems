@@ -1,0 +1,18 @@
+1. Heapify -- the operation cost depends upon the level of node being heapified.
+ Hence a asymptotically tight analysis results in complexity O(n);
+ 
+ 2.The same complexity is not achieved for heap sort because extracting max from root is more expensive as comapared to heapify.
+ The main difference is the cost  of movement. In case of heapify more number of nodes were moved for lesser distance --
+ the nodes at level h -1 were to move to level h if they were not satisfying heap property.
+ 
+ 3. k largest(or smallest) elements in an array  -- O(n + klogn) :: first heapify in O(n) and then extract max/min  k times !!!
+ 
+ 4. Sort a K-sorted array :: O(k + klogk) -- yet !!
+ 
+ 5. Second best player in a knock out tournament :: N - 1 + LogN - 1.
+  The player losing to the winner in the final match may not be second best player. 
+  All players who lost to the winner(there count is logN ) can be the second best player.
+  Hence selecting best out of LogN player require LogN -1 more comparisons !!! 
+  
+ 6.Median in a stream of integers (running integers)
+ d

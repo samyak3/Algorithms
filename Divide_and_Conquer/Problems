@@ -1,0 +1,6 @@
+Q 1 .Count Inversions in an array
+
+Time Complexity: O(nlogn)
+Algorithmic Paradigm: Divide and Conquer -- Merge Sort modified !!!
+
+-------------------------------------------------------------------------------------------------------------------

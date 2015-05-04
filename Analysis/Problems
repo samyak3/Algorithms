@@ -1,0 +1,64 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+1.Does Asymptotic Analysis always work?
+Asymptotic Analysis is not perfect, but that’s the best way available for analyzing algorithms. 
+For example, say there are two sorting algorithms that take 1000nLogn and 2nLogn time respectively on a machine. 
+Both of these algorithms are asymptotically same (order of growth is nLogn). 
+So, With Asymptotic Analysis, we can’t judge which one is better as we ignore constants in Asymptotic Analysis.
+Also, in Asymptotic analysis, we always talk about input sizes larger than a constant value.
+It might be possible that those large inputs are never given to your software and an algorithm 
+which is asymptotically slower, always performs better for your particular situation.
+ So, you may end up choosing an algorithm that is Asymptotically slower but faster for your software.
+ 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ Worst Case Analysis (Usually Done)
+In the worst case analysis, we calculate upper bound on running time of an algorithm.
+
+Average Case Analysis (Sometimes done) 
+In average case analysis, we take all possible inputs and calculate computing time for all of the inputs. 
+Sum all the calculated values and divide the sum by total number of inputs. 
+
+Best Case Analysis (Bogus) 
+In the best case analysis, we calculate lower bound on running time of an algorithm. 
+We must know the case that causes minimum number of operations to be executed
+
+or some algorithms, all the cases are asymptotically same, i.e., there are no worst and best cases. 
+For example, Merge Sort. Merge Sort does \theta(nLogn)operations in all cases.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Asymptotic Notations
+The theta notation bounds a functions from above and below, so it defines exact asymptotic behaviour.
+
+Big O Notation: The Big O notation defines an upper bound of an algorithm, it bounds a function only from above. 
+
+Omega Notation: Just as Big O notation provides an asymptotic upper bound on a function,
+Omega notation provides an asymptotic lower bound.
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Solving recurrences -- please refer Cormen
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+In computer science, an online algorithm is one that can process its input piece-by-piece in a serial fashion, 
+i.e., in the order that the input is fed to the algorithm, without having the entire input available from the start.
+
+In contrast, an offline algorithm is given the whole problem data from the beginning and is required to output 
+an answer which solves the problem at hand.
+
+Some "offline vs online" algorithms:
+
+Category	offline	online	Description
+Sorting:	  Selection sort-offline algo  	 Insertion sort -- online algo 	
+Selection sort requires that the entire list be given before it can sort it, while Insertion sort doesn't.
+XML parsers:	  DOM	  SAX	SAX parsers operate on each piece of the XML document sequentially, 
+DOM parsers operates on the document as a whole.
+
+Amortized Analysis is used for algorithms where an occasional operation is very slow, 
+but most of the other operations are faster. In Amortized Analysis, we analyze a sequence of 
+operations and guarantee a worst case average time which is lower than the worst case time of a 
+particular expensive operation.
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+Time Complexity of building a heap -- O(n) although it looks like O(nlogn)
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

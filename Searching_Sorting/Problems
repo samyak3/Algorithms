@@ -1,0 +1,54 @@
+1. The good thing about selection sort is it never makes more than O(n) swaps and can be useful when memory write 
+is a costly operation.
+
+------------------------------------------------------------------------------------------------------------------------
+
+2.Bubble sort takes minimum time (Order of n) when elements are already sorted.
+
+------------------------------------------------------------------------------------------------------------------------
+3. Insertion sort takes maximum time to sort if elements are sorted in reverse order.
+ And it takes minimum time (Order of n) when elements are already sorted.
+ 
+It can also be useful when input array is almost sorted, only few elements are misplaced in complete big array.
+------------------------------------------------------------------------------------------------------------------------
+4. Time complexity of heapify is O(Logn). Time complexity of createAndBuildHeap() is O(n) and overall time complexity 
+of Heap Sort is O(nLogn).
+
+------------------------------------------------------------------------------------------------------------------------
+
+5. Bucket sort is mainly useful when input is uniformly distributed over a range.
+
+------------------------------------------------------------------------------------------------------------------------
+
+6. A sorting algorithm is said to be stable if two objects with equal keys appear in the same order in sorted output as 
+they appear in the input unsorted array.
+
+------------------------------------------------------------------------------------------------------------------------
+
+7.Worst case in quick --  worst case can still occur if the input array is such that the maximum (or minimum) 
+
+element is always chosen as pivot.
+
+------------------------------------------------------------------------------------------------------------------------
+
+8.Find the Minimum length Unsorted Subarray, sorting which makes the complete array sorted.
+
+O(n) !!!!!!!!!!!!!!!!!!!!!!!!!
+
+------------------------------------------------------------------------------------------------------------------------
+
+9.Print all elements in sorted order from row and column wise sorted matrix(N x N) -- use Heap -- N^2(logN) 
+
+------------------------------------------------------------------------------------------------------------------------
+10. K’th Smallest/Largest Element in Unsorted Array -- 
+A simple optomization is to create a Min Heap of the given n elements and call extractMin() k times.
+Time complexity of this solution is O(n + kLogn).
+
+Quickselect : his is an optimization over method 1 if QuickSort is used as a sorting algorithm in first step. 
+In QuickSort, we pick a pivot element, then move the pivot element to its correct position and partition the array 
+around it. The idea is, not to do complete quicksort, but stop at the point where pivot itself is k’th smallest element. 
+Also, not to recur for both left and right sides of pivot, but recur for one of them according to the position of pivot.
+ The worst case time complexity of this method is O(n2), but it works in O(n) on average.
+ 
+ ------------------------------------------------------------------------------------------------------------------------
+ 
