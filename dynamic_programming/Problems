@@ -42,7 +42,8 @@ because the longest path from q to r is q->s->t->r.
 
 -----------------------------------------------------------------------------------------------------------------
 
-5. 
+5. There are many practical applications of edit distance algorithm, refer Lucene API for sample. 
+Another example, display all the words in a dictionary that are near proximity to a given word\incorrectly spelled word.
 
 -----------------------------------------------------------------------------------------------------------------
 
