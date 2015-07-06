@@ -1,0 +1,27 @@
+In computer science, a disjoint-set data structure, also called a union–find data structure or merge–find set, 
+is a data structure that keeps track of a set of elements partitioned into a number of disjoint (nonoverlapping) 
+subsets.
+ It supports two useful operations:
+
+Find: Determine which subset a particular element is in. Find typically returns an item from this set that serves 
+as its "representative". Also, by comparing the result of two Find operations, one can determine whether two elements 
+are in the same subset.
+Union: Join two subsets into a single subset.
+
+Disjoint-set Forests:
+Disjoint-set forests are data structures where each set is represented by a tree data structure,
+ in which each node holds a reference to its parent node 
+ function MakeSet(x)
+     x.parent := x
+ function Find(x)
+     if x.parent == x
+        return x
+     else
+        return Find(x.parent)
+ function Union(x, y)
+     xRoot := Find(x)
+     yRoot := Find(y)
+     xRoot.parent := yRoot
+     
+     Improvements :
+     1. Union 
