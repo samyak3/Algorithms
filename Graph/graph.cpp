@@ -8,6 +8,8 @@ using namespace std;
 int visited[7];
 
 Node* a[7];
+
+
 Node* pHead= NULL;
 Node* getNode(int data)
 {
@@ -16,8 +18,16 @@ Node* getNode(int data)
 	pNode->next = NULL;
 	return pNode;
 }
+MNode* getMNode(int data, int w)
+{
+	MNode* pNode = new MNode;
+	pNode->data = data;
+	pNode->weight = w;
+	pNode->next = NULL;
+	return pNode;
+}
 void bfs(Node*);
-int main()
+int mainGraph()
 {
 	Node *v1, *v2, *v3,*v4;
 	v1 = getNode(1);
@@ -71,5 +81,8 @@ int main()
 	cout<<endl<<"dfs traversal ::"<<endl;
 	dfs(pHead);
 	cout<<endl<<"##########################################################################################################"<<endl;
+	
+	KMST();
+	
 	return 0;
 }
