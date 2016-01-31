@@ -1,0 +1,19 @@
+1.In C++, your "compare" predicate must be a strict weak ordering. In particular, "compare(X,X)"
+ must return "false" for any X. In your compare function, if both pairs are identical, you hit the 
+ test (p1.first <= p2.first) , and return "true". Therefore, this "compare" predicate does not impose
+  a strict weak ordering, and the result of passing it to "sort" is undefined.
+  
+ 2.scanf is faster than cin !!!
+ 
+ he speed difference is largely due to the iostream I/O functions maintaining synchronization with 
+ the C I/O functions. We can turn this off with a call to std::ios::sync_with_stdio(false);
+ 
+ 3.The default choice for a floating-point type should be double. This is also the type that you get with floating-point literals without a suffix 
+ or (in C) standard functions that operate on floating point numbers (e.g. exp, sin, etc.).
+
+float should only be used if you need to operate on a lot of floating-point numbers (think in the order of thousands or more) and analysis of the
+ algorithm has shown that the reduced range and accuracy don't pose a problem.
+
+long double can be used if you need more range or accuracy than double, and if it provides this on your target platform.
+
+In summary, float and long double should be reserved for use by the specialists, with double for "every-day" use.
