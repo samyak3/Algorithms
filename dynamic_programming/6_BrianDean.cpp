@@ -1,18 +1,26 @@
+/*
+ * 6_BrianDean.cpp
+ *
+ *  Created on: Jan 31, 2016
+ *      Author: Admin
+ */
+
+//Integer Knapsack Problem (Duplicate Items Forbidden).
 #include <iostream>
 #include<vector>
 using namespace std;
 int K[2002][2002]={0};
 int  W , N ;
-int main() 
+int main()
 {
 	cin >> W >> N;
-	
+
 	vector<int>w;
-	
+
 	vector<int>v;
-	
+
 	w.push_back(0);
-	
+
 	v.push_back(0);
 	int nw,nv;
 	for(int i = 1 ; i <= N ; i++)
