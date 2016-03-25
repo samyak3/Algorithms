@@ -1,0 +1,13 @@
+1. Delete a node from BST
+
+2. Inorder predecessor and successor for a given key in BST
+
+3. Check if a binary tree is BST or not
+
+4. Lowest Common Ancestor in a Binary Search Tree.
+
+5. Find k-th smallest element in BST
+
+6. Iterative Inorder traversal of BST
+
+7. Total number of possible Binary Search Trees with n keys 
