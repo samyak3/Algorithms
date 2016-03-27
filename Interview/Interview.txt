@@ -13,3 +13,13 @@
 7. Total number of possible Binary Search Trees with n keys 
 
 8. The Great Tree List Recursion Problem
+
+9. You have two very large binary trees : T, with millions of nodes, and T2, with hundreds of nodes.Create an algorithm to decide if T2 is a subtree of T1.
+
+Hint : Create strings representing the inorder and preorder traversals of both the trees. If T2's inorder & preorder traversal string is a substring of T1's
+
+strings, then T2 is a subtree of T1.( Source : Gayle) 
+
+10. Root to leaf paths / has path sum 
+
+11. 

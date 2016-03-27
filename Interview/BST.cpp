@@ -5,8 +5,24 @@
 *      Author: Admin
 */
 
+#define INORDER_TRAVERSAL
+#define PREORDER_TRAVERSAL
+#define POSTORDER_TRAVERSAL
+#define INORDER_SUCCESSOR
+#define INORDER_PREDECESSOR
+#define ISBST
+#define LOWEST_COMMON_ANCESTOR
+#define KTH_SMALLEST_NODE
+#define ITERATIVE_INORDER
+#define COUNT_BST
+#define TREE_TO_LIST
+#define DELETE_NODE
+#define ROOT_TO_LEAF_PATHS
+
+
 #include<iostream>
 #include<stack>
+#include<vector>
 using namespace std;
 
 typedef struct bst
@@ -45,11 +61,12 @@ Node* LCA(Node* pRoot, int val1, int val2);
 Node* FindKthSmallest(Node* pRoot, int K);
 void iterative_inorder(Node* pRoot);
 int CountBST(int nNodes);
-void join(Node* pA,Node* pB);
+void join(Node* pA, Node* pB);
 Node* append(Node* pA, Node* pB);
 Node* TreeToList(Node* pRoot);
 void printList(Node* pHead);
-
+void RootToLeafPaths(Node* pRoot);
+void RootToLeafPathsUtil(Node* pRoot, vector<int>v);
 bool IsLeafNode(Node* pRoot)
 {
 	if (pRoot->left == NULL && pRoot->right == NULL)
@@ -95,19 +112,25 @@ int main()
 	insert(&pRoot, 5);
 	insert(&pRoot, 7);
 
+#ifdef INORDER_TRAVERSAL
 	cout << "Inorder traversal :: " << endl;
 	inorder(pRoot);
-	cout << endl<< endl;
+	cout << endl << endl;
+#endif
 
+#ifdef PREORDER_TRAVERSAL
 	cout << "preorder traversal :: " << endl;
 	preorder(pRoot);
-	cout << endl<< endl;
+	cout << endl << endl;
+#endif
 
+#ifdef POSTORDER_TRAVERSAL
 	cout << "postorder traversal :: " << endl;
 	postorder(pRoot);
-	cout << endl<< endl;
+	cout << endl << endl;
+#endif
 
-
+#ifdef INORDER_SUCCESSOR
 	int data = 1;
 	Node* pSucc = InOrderSuccessor(pRoot, data);
 	if (pSucc)
@@ -119,7 +142,11 @@ int main()
 		cout << "These is no InOrderSuccessor of " << data << endl;
 	}
 
-	cout << endl<< endl;
+	cout << endl << endl;
+
+#endif
+
+#ifdef INORDER_PREDECESSOR
 	Node* pPre = InOrderPredecessor(pRoot, data);
 	if (pPre)
 	{
@@ -129,7 +156,11 @@ int main()
 	{
 		cout << "These is no InOrderPredecessor of " << data << endl;
 	}
-	cout << endl<< endl;
+	cout << endl << endl;
+
+#endif
+
+#ifdef ISBST
 	if (IsBST(pRoot))
 	{
 		cout << "The binary tree is a BST " << endl;
@@ -138,34 +169,54 @@ int main()
 	{
 		cout << "The binary tree is not a BST " << endl;
 	}
-	cout << endl<< endl;
+	cout << endl << endl;
+
+#endif
+
+#ifdef LOWEST_COMMON_ANCESTOR
 	int val1 = 5;
 	int val2 = 7;
 	cout << "The LCA of " << val1 << " and " << val2 << " is ::" << LCA(pRoot, val1, val2)->data << endl;
-	cout << endl<< endl;
+	cout << endl << endl;
+#endif
+
+
+#ifdef KTH_SMALLEST_NODE
 	int K = 6;
 
 	cout << K << " smallest node is :: " << FindKthSmallest(pRoot, K)->data << endl;
-	cout << endl<< endl;
-	cout << endl << "Iterative Inorder travrsal ::"<<endl;
+	cout << endl << endl;
+#endif
+
+#ifdef ITERATIVE_INORDER
+	cout << endl << "Iterative Inorder travrsal ::" << endl;
 	iterative_inorder(pRoot);
-	cout << endl<< endl;
+	cout << endl << endl;
+#endif
 
+#ifdef COUNT_BST
 	int nNodes = 3;
-	cout<<"Number of BST with "<<nNodes<<" are ::"<<CountBST(nNodes)<<endl;
-	cout << endl<< endl;
+	cout << "Number of BST with " << nNodes << " are ::" << CountBST(nNodes) << endl;
+	cout << endl << endl;
+#endif
 
 
-	cout<<"List :: "<<endl;
-	printList(TreeToList(pRoot));
-	cout<<endl;
-	/*
+#ifdef ROOT_TO_LEAF_PATHS
+	RootToLeafPaths(pRoot);
+#endif
+
+#ifdef DELETE_NODE
 	DeleteNode(&pRoot, 6);
 	cout << "Inorder traversal after Deletion :: " << endl;
 	inorder(pRoot);
-	cout << endl<< endl;
-	*/
+	cout << endl << endl;
+#endif
 
+#ifdef TREE_TO_LIST
+	cout << "List :: " << endl;
+	printList(TreeToList(pRoot));
+	cout << endl;
+#endif
 	return 0;
 }
 
@@ -406,32 +457,32 @@ void iterative_inorder(Node* pRoot)
 
 int CountBST(int nNodes)
 {
-	if(nNodes <= 1)
+	if (nNodes <= 1)
 	{
 		return 1;
 	}
 	int count = 0;
-	for(int n = 1 ; n <= nNodes; n++)
+	for (int n = 1; n <= nNodes; n++)
 	{
-		int nLeftTreeNodes = n-1;
+		int nLeftTreeNodes = n - 1;
 		int nRightTreeNnodes = nNodes - n;
 		count = count + CountBST(nLeftTreeNodes) * CountBST(nRightTreeNnodes);
 	}
 	return count;
 }
 
-void join(Node* pA,Node* pB)
+void join(Node* pA, Node* pB)
 {
-	pA->right=pB;
-	pB->left=pA;
+	pA->right = pB;
+	pB->left = pA;
 }
 Node* append(Node* pA, Node* pB)
 {
-	if(pA==NULL)
+	if (pA == NULL)
 	{
 		return pB;
 	}
-	if(pB == NULL)
+	if (pB == NULL)
 	{
 		return pA;
 	}
@@ -440,13 +491,13 @@ Node* append(Node* pA, Node* pB)
 	pALast = pA->left;
 	pBLast = pB->left;
 
-	join(pALast,pB);
-	join(pBLast,pA);
+	join(pALast, pB);
+	join(pBLast, pA);
 	return pA;
 }
 Node* TreeToList(Node* pRoot)
 {
-	if(pRoot == NULL)
+	if (pRoot == NULL)
 	{
 		return NULL;
 	}
@@ -458,19 +509,46 @@ Node* TreeToList(Node* pRoot)
 
 	pRoot->left = pRoot;
 	pRoot->right = pRoot;
-	append(pLeftList,pRoot);
-	append(pLeftList,pRightList);
+	pLeftList=append(pLeftList, pRoot);
+	pLeftList=append(pLeftList, pRightList);
 
 	return pLeftList;
 }
 void printList(Node* pHead)
 {
 	Node* cptr = pHead;
-	while(1)
+	while (1)
 	{
-		cout<<cptr->data<<" ";
-		cptr = cptr->next;
-		if(cptr == pHead)
+		cout << cptr->data << " ";
+		cptr = cptr->right;
+		if (cptr == pHead)
 			break;
 	}
+}
+void RootToLeafPaths(Node* pRoot)
+{
+	vector<int>v;
+	if (pRoot == NULL)
+		return;
+	cout << "Root to Leaf paths are :: " << endl;
+	RootToLeafPathsUtil(pRoot, v);
+}
+void RootToLeafPathsUtil(Node* pRoot, vector<int>v)
+{
+	if (pRoot == NULL)
+	{
+		return;
+	}
+	v.push_back(pRoot->data);
+	if (IsLeafNode(pRoot))
+	{
+		for (int i = 0; i < v.size(); i++)
+		{
+			cout << v[i] << " ";
+		}
+		cout << endl;
+		return;
+	}
+	RootToLeafPathsUtil(pRoot->left, v);
+	RootToLeafPathsUtil(pRoot->right, v);
 }
