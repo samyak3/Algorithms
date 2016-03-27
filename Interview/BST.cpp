@@ -1,9 +1,9 @@
 /*
-* BST.cpp
-*
-*  Created on: Mar 24, 2016
-*      Author: Admin
-*/
+ * BST.cpp
+ *
+ *  Created on: Mar 24, 2016
+ *      Author: Admin
+ */
 
 #define INORDER_TRAVERSAL
 #define PREORDER_TRAVERSAL
@@ -18,7 +18,7 @@
 #define TREE_TO_LIST
 #define DELETE_NODE
 #define ROOT_TO_LEAF_PATHS
-
+#define MIRROR
 
 #include<iostream>
 #include<stack>
@@ -67,41 +67,7 @@ Node* TreeToList(Node* pRoot);
 void printList(Node* pHead);
 void RootToLeafPaths(Node* pRoot);
 void RootToLeafPathsUtil(Node* pRoot, vector<int>v);
-bool IsLeafNode(Node* pRoot)
-{
-	if (pRoot->left == NULL && pRoot->right == NULL)
-	{
-		return true;
-	}
-	return false;
-}
-
-Node* FindMinNode(Node* pRoot)
-{
-	if (pRoot == NULL)
-	{
-		return NULL;
-	}
-	while (pRoot->left)
-	{
-		pRoot = pRoot->left;
-	}
-	return pRoot;
-}
-Node* FindMaxNode(Node* pRoot)
-{
-	if (pRoot == NULL)
-	{
-		return NULL;
-	}
-	while (pRoot->right)
-	{
-		pRoot = pRoot->right;
-	}
-	return pRoot;
-}
-
-
+void mirror(Node* pRoot);
 int main()
 {
 	insert(&pRoot, 4);
@@ -114,8 +80,29 @@ int main()
 
 #ifdef INORDER_TRAVERSAL
 	cout << "Inorder traversal :: " << endl;
+
 	inorder(pRoot);
+
 	cout << endl << endl;
+
+#ifdef MIRROR
+	mirror(pRoot);
+
+	cout << "Inorder traversal after mirror :: " << endl;
+
+	inorder(pRoot);
+
+	cout << endl << endl;
+
+	mirror(pRoot);
+
+	cout << "Inorder traversal after mirror :: " << endl;
+
+	inorder(pRoot);
+
+	cout << endl << endl;
+#endif
+
 #endif
 
 #ifdef PREORDER_TRAVERSAL
@@ -203,6 +190,7 @@ int main()
 
 #ifdef ROOT_TO_LEAF_PATHS
 	RootToLeafPaths(pRoot);
+	cout<<endl<<endl;
 #endif
 
 #ifdef DELETE_NODE
@@ -217,6 +205,7 @@ int main()
 	printList(TreeToList(pRoot));
 	cout << endl;
 #endif
+
 	return 0;
 }
 
@@ -509,8 +498,8 @@ Node* TreeToList(Node* pRoot)
 
 	pRoot->left = pRoot;
 	pRoot->right = pRoot;
-	pLeftList=append(pLeftList, pRoot);
-	pLeftList=append(pLeftList, pRightList);
+	pLeftList = append(pLeftList, pRoot);
+	pLeftList = append(pLeftList, pRightList);
 
 	return pLeftList;
 }
@@ -551,4 +540,49 @@ void RootToLeafPathsUtil(Node* pRoot, vector<int>v)
 	}
 	RootToLeafPathsUtil(pRoot->left, v);
 	RootToLeafPathsUtil(pRoot->right, v);
+}
+void mirror(Node* pRoot)
+{
+	if (pRoot == NULL)
+	{
+		return;
+	}
+	mirror(pRoot->left);
+	mirror(pRoot->right);
+	Node* temp = pRoot->left;
+	pRoot->left = pRoot->right;
+	pRoot->right = temp;
+}
+bool IsLeafNode(Node* pRoot)
+{
+	if (pRoot->left == NULL && pRoot->right == NULL)
+	{
+		return true;
+	}
+	return false;
+}
+
+Node* FindMinNode(Node* pRoot)
+{
+	if (pRoot == NULL)
+	{
+		return NULL;
+	}
+	while (pRoot->left)
+	{
+		pRoot = pRoot->left;
+	}
+	return pRoot;
+}
+Node* FindMaxNode(Node* pRoot)
+{
+	if (pRoot == NULL)
+	{
+		return NULL;
+	}
+	while (pRoot->right)
+	{
+		pRoot = pRoot->right;
+	}
+	return pRoot;
 }
