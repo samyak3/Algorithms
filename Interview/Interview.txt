@@ -22,4 +22,4 @@ strings, then T2 is a subtree of T1.( Source : Gayle)
 
 10. Root to leaf paths / has path sum 
 
-11. 
+11.  mirror() : Change a tree so that the roles of the left and right pointers are swapped at every node. 
