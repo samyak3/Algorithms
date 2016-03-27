@@ -1,9 +1,11 @@
 /*
- * BST.cpp
- *
- *  Created on: Mar 24, 2016
- *      Author: Admin
- */
+* BST.cpp
+*
+*  Created on: Mar 24, 2016
+*      Author: Admin
+*/
+
+int pret[] = { 4, 2, 1, 3, 6, 5, 7 };
 
 #define INORDER_TRAVERSAL
 #define PREORDER_TRAVERSAL
@@ -19,6 +21,7 @@
 #define DELETE_NODE
 #define ROOT_TO_LEAF_PATHS
 #define MIRROR
+#define CONSTRUCT_TREE_FROM_PREORDER
 
 #include<iostream>
 #include<stack>
@@ -68,6 +71,7 @@ void printList(Node* pHead);
 void RootToLeafPaths(Node* pRoot);
 void RootToLeafPathsUtil(Node* pRoot, vector<int>v);
 void mirror(Node* pRoot);
+Node* constructTreeFromPreOrder(int pre[], int low, int high, int index, int len);
 int main()
 {
 	insert(&pRoot, 4);
@@ -190,7 +194,14 @@ int main()
 
 #ifdef ROOT_TO_LEAF_PATHS
 	RootToLeafPaths(pRoot);
-	cout<<endl<<endl;
+	cout << endl << endl;
+#endif
+
+#ifdef CONSTRUCT_TREE_FROM_PREORDER
+
+	cout << "Inorder traversal of tree constructed from preorder traversal :: " << endl;
+	inorder(constructTreeFromPreOrder(pret, -1, 99, 0, 7));
+	cout << endl << endl;
 #endif
 
 #ifdef DELETE_NODE
@@ -584,5 +595,29 @@ Node* FindMaxNode(Node* pRoot)
 	{
 		pRoot = pRoot->right;
 	}
+	return pRoot;
+}
+Node* constructTreeFromPreOrder(int pre[], int low, int high, int index, int len)
+{
+	if (index == len || low > high)
+	{
+		return NULL;
+	}
+	int i;
+	bool bFound = false;
+	for (i = index; i < len; i++)
+	{
+		if (pre[i] < high && pre[i] > low)
+		{
+			bFound = true;
+			break;
+		}
+	}
+	if (bFound == false)
+		return NULL;
+	Node* pRoot = getNode(pre[i]);
+
+	pRoot->left = constructTreeFromPreOrder(pre, low, pre[i], i + 1, len);
+	pRoot->right = constructTreeFromPreOrder(pre, pre[i], high, i + 1, len);
 	return pRoot;
 }
