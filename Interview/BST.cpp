@@ -45,6 +45,11 @@ Node* LCA(Node* pRoot, int val1, int val2);
 Node* FindKthSmallest(Node* pRoot, int K);
 void iterative_inorder(Node* pRoot);
 int CountBST(int nNodes);
+void join(Node* pA,Node* pB);
+Node* append(Node* pA, Node* pB);
+Node* TreeToList(Node* pRoot);
+void printList(Node* pHead);
+
 bool IsLeafNode(Node* pRoot)
 {
 	if (pRoot->left == NULL && pRoot->right == NULL)
@@ -150,10 +155,16 @@ int main()
 	cout<<"Number of BST with "<<nNodes<<" are ::"<<CountBST(nNodes)<<endl;
 	cout << endl<< endl;
 
+
+	cout<<"List :: "<<endl;
+	printList(TreeToList(pRoot));
+	cout<<endl;
+	/*
 	DeleteNode(&pRoot, 6);
 	cout << "Inorder traversal after Deletion :: " << endl;
 	inorder(pRoot);
 	cout << endl<< endl;
+	*/
 
 	return 0;
 }
@@ -407,4 +418,59 @@ int CountBST(int nNodes)
 		count = count + CountBST(nLeftTreeNodes) * CountBST(nRightTreeNnodes);
 	}
 	return count;
+}
+
+void join(Node* pA,Node* pB)
+{
+	pA->right=pB;
+	pB->left=pA;
+}
+Node* append(Node* pA, Node* pB)
+{
+	if(pA==NULL)
+	{
+		return pB;
+	}
+	if(pB == NULL)
+	{
+		return pA;
+	}
+	Node* pALast;
+	Node* pBLast;
+	pALast = pA->left;
+	pBLast = pB->left;
+
+	join(pALast,pB);
+	join(pBLast,pA);
+	return pA;
+}
+Node* TreeToList(Node* pRoot)
+{
+	if(pRoot == NULL)
+	{
+		return NULL;
+	}
+	Node* pLeftList;
+	Node* pRightList;
+
+	pLeftList = TreeToList(pRoot->left);
+	pRightList = TreeToList(pRoot->right);
+
+	pRoot->left = pRoot;
+	pRoot->right = pRoot;
+	append(pLeftList,pRoot);
+	append(pLeftList,pRightList);
+
+	return pLeftList;
+}
+void printList(Node* pHead)
+{
+	Node* cptr = pHead;
+	while(1)
+	{
+		cout<<cptr->data<<" ";
+		cptr = cptr->next;
+		if(cptr == pHead)
+			break;
+	}
 }
