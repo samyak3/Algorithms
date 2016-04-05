@@ -72,6 +72,7 @@ void RootToLeafPaths(Node* pRoot);
 void RootToLeafPathsUtil(Node* pRoot, vector<int>v);
 void mirror(Node* pRoot);
 Node* constructTreeFromPreOrder(int pre[], int low, int high, int index, int len);
+int Height(Node* pRoot);
 int main()
 {
 	insert(&pRoot, 4);
@@ -81,6 +82,8 @@ int main()
 	insert(&pRoot, 6);
 	insert(&pRoot, 5);
 	insert(&pRoot, 7);
+
+	cout << "Height of Tree is  :: " <<Height(pRoot)<< endl;
 
 #ifdef INORDER_TRAVERSAL
 	cout << "Inorder traversal :: " << endl;
@@ -620,4 +623,19 @@ Node* constructTreeFromPreOrder(int pre[], int low, int high, int index, int len
 	pRoot->left = constructTreeFromPreOrder(pre, low, pre[i], i + 1, len);
 	pRoot->right = constructTreeFromPreOrder(pre, pre[i], high, i + 1, len);
 	return pRoot;
+}
+int Height(Node* pRoot)
+{
+	if(pRoot == NULL)
+	{
+		return 0;
+	}
+	else
+	{
+		return 1+max(Height(pRoot->left),Height(pRoot->right));
+	}
+}
+void GetDia(Node* pRoot, int& dia)
+{
+
 }
