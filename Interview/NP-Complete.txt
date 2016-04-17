@@ -1,0 +1,4 @@
+1. In computer science, the clique problem refers to computational problems of finding cliques (subsets of vertices, all adjacent to each other,
+ also called complete subgraphs) in a graph.
+ 
+2. 
