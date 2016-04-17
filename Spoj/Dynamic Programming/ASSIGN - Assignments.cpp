@@ -5,7 +5,7 @@
 
 using namespace std;
 
-FILE* pF;
+//FILE* pF;
 
 int N;
 
@@ -65,7 +65,7 @@ ll solve(int nStudentIndex, int nAssignment)
 
 int main()
 {
-	freopen_s(&pF, "input.txt", "r",stdin);
+	//freopen_s(&pF, "input.txt", "r",stdin);
 	cin >> C;
 	
 	
