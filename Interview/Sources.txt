@@ -1,0 +1,3 @@
+http://stackoverflow.com/questions/22394257/how-to-count-integers-between-large-a-and-b-with-a-certain-property
+
+http://www.spoj.com/problems/NUMTSN/ ( "spoj" "numbers between" A and B)
