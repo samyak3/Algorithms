@@ -1,0 +1,9 @@
+1. Binary Search : https://www.topcoder.com/community/data-science/data-science-tutorials/binary-search/
+It compares the median value in the search space to the target value. 
+
+A monotonic function is a function which is either entirely nonincreasing or nondecreasing. A function is monotonic if its first derivative (which need not be continuous) does not change sign.
+
+Problems Done : FairWorkload - SRM 169
+Parking – SRM 236
+
+2. 
