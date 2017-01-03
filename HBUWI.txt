@@ -5,5 +5,34 @@ A monotonic function is a function which is either entirely nonincreasing or non
 
 Problems Done : FairWorkload - SRM 169
 Parking – SRM 236
+************************************************************************************************************************************************************
+2. Binary Indexed Trees : 
 
-2. 
+Basic idea
+
+Each integer can be represented as sum of powers of two. In the same way, cumulative frequency can be represented as sum of sets of subfrequencies. In our case, each set contains some successive number of non-overlapping frequencies.
+
+ In two's-complement :Negating a number (whether negative or positive) is done by inverting all the bits and then adding one to that result.
+
+ If two paths from two indexes to root have the same part of path, then we can calculate the sum until the paths meet, substract stored sums and we get a sum of frequencies between that two indexes.
+ 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ int readSingle(int idx){
+int sum = tree[idx]; // sum will be decreased
+if (idx > 0){ // special case
+    int z = idx - (idx & -idx); // make z first
+    idx--; // idx is no important any more, so instead y, you can use idx
+    while (idx != z){ // at some iteration idx (y) will become z
+        sum -= tree[idx]; 
+// substruct tree frequency which is between y and "the same path"
+        idx -= (idx & -idx);
+    }
+}
+return sum;
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Learning : 
+1. coordinate compression for problem ORDERSET on spoj
+2. BIT is n dimensional data structure , problem : MATSUM on spoj
+
