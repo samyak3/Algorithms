@@ -1,122 +1,166 @@
-#include<iostream>
-using namespace std;
+#include"BST.h"
 
-
-struct node
+bstNode* pRoot = NULL;
+bstNode* pRootSub = NULL;
+bstNode* getbtNode(int data)
 {
-	int d;
-	struct node* left;
-	struct node* right;
-};
-typedef struct node* Node;
-typedef struct node objNode;
-
-Node pRoot = NULL;
-
-void insert(Node*,int);
-void inorder(Node);
-void preorder(Node);
-void postorder(Node);
-int getMin(Node);
-int getMax(Node);
-Node getNode(int d)
-{
-	Node ptr = new objNode;
-	ptr->d=d;
-	ptr->left=NULL;
-	ptr->right=NULL;
-	return ptr;
+	bstNode* pNode = new bstNode;
+	pNode->data = data;
+	pNode->left = NULL;
+	pNode->right = NULL;
+	return pNode;
 }
-int main()
-{
-	insert(&pRoot,5);
-	insert(&pRoot,7);
-	insert(&pRoot,3);
-	insert(&pRoot,4);
-	insert(&pRoot,2);
-	insert(&pRoot,1);
-	insert(&pRoot,6);
-	insert(&pRoot,8);
-	cout<<"inorder ::"<<endl;
-	inorder(pRoot);
-	cout<<endl;
-	cout<<"postorder ::"<<endl;
-	postorder(pRoot);
-	cout<<endl;
-	cout<<"preorder ::"<<endl;
-	preorder(pRoot);
-	cout<<endl;
-	cout<<"min ---"<<getMin(pRoot);
-	cout<<endl;
-	cout<<"max ---"<<getMax(pRoot);
-	cout<<endl;
-	return 0;
-}
-void insert(Node* p,int d)
-{
-	if(*p == NULL)
-	{
-		*p = getNode(d);
-		return;
-	}
-	Node ptr = *p;
-	if(ptr->d > d)
-	{
-		insert(&(ptr->left),d);
-	}
-	else
-	{
-		insert(&(ptr->right),d);
-	}		
-}
-void inorder(Node p)
-{
-	if(p)
-	{
-		inorder(p->left);
-		cout<<p->d<<"\t";
-		inorder(p->right);
-	}	
-}
-void preorder(Node p)
-{
-	if(p)
-	{
-		cout<<p->d<<"\t";
-		preorder(p->left);
-		preorder(p->right);
-	}	
-}
-void postorder(Node p)
-{
-	if(p)
-	{
-		postorder(p->left);
-		postorder(p->right);
-		cout<<p->d<<"\t";
-	}	
-}
-int getMin(Node p)
+bstNode* getMin(bstNode* p)
 {
 	if(p == NULL)
 	{
-		return -1;
+		return NULL;
 	}
 	while(p->left)
 	{
 		p = p->left;
 	}
-	return p->d;
+	return p;
 }
-int getMax(Node p)
+bstNode* getMax(bstNode* p)
 {
 	if(p == NULL)
 	{
-		return -1;
+		return NULL;
 	}
 	while(p->right)
 	{
 		p = p->right;
 	}
-	return p->d;
+	return p;
+}
+
+int GetTreeSize(bstNode* pRoot)
+{
+	if(pRoot == NULL)
+		return 0;
+	else
+		return 1 + GetTreeSize(pRoot->left) + GetTreeSize(pRoot->right);
+}
+void AddNode(bstNode** ppRoot,int data)
+{
+	bstNode* pRoot = *ppRoot;
+	if(pRoot == NULL)
+	{
+		pRoot = getbtNode(data);
+		*ppRoot = pRoot;
+	}
+	else
+	{
+		if(data >pRoot->data)
+		{
+			AddNode(&pRoot->right,data);
+		}
+		else
+		{
+			AddNode(&pRoot->left,data);
+		}
+	}
+}
+void Inorder(bstNode* pRoot)
+{
+	if(pRoot == NULL)
+		return;
+	Inorder(pRoot->left);
+	cout<<pRoot->data<<"\t";
+	Inorder(pRoot->right);
+}
+void Preorder(bstNode* pRoot)
+{
+	if(pRoot == NULL)
+		return;
+	cout<<pRoot->data<<"\t";
+	Preorder(pRoot->left);
+	Preorder(pRoot->right);
+}
+
+void Postorder(bstNode* pRoot)
+{
+	if(pRoot == NULL)
+		return;	
+	Postorder(pRoot->left);
+	Postorder(pRoot->right);
+	cout<<pRoot->data<<"\t";
+}
+int main()
+{
+	AddNode(&pRoot,4);
+	AddNode(&pRoot,6);
+	AddNode(&pRoot,2);
+	AddNode(&pRoot,3);
+	AddNode(&pRoot,5);
+	AddNode(&pRoot,7);
+	AddNode(&pRoot,1);
+	
+	cout<<endl<<"##########################################################################################################"<<endl;
+	
+	cout<<"Inorder Traversal ::"<<endl;
+	Inorder(pRoot);
+	cout<<endl;
+	
+	cout<<endl<<"##########################################################################################################"<<endl;
+	
+	cout<<"Preorder Traversal ::"<<endl;
+	
+	Preorder(pRoot);
+	cout<<endl;
+	
+	cout<<endl<<"##########################################################################################################"<<endl;
+	
+	cout<<"Postorder Traversal ::"<<endl;
+	Postorder(pRoot);
+	cout<<endl;
+	
+cout<<endl<<"##########################################################################################################"<<endl;
+	
+	cout<<"Deleting Node with data 7 ::"<<endl;
+	DeleteNode(&pRoot,7);
+	cout<<endl;
+	cout<<"Inorder Traversal ::"<<endl;
+	Inorder(pRoot);
+	cout<<endl;
+	AddNode(&pRoot,7);
+	cout<<endl<<"##########################################################################################################"<<endl;
+	
+	cout<<"CheckIFBST  ::"<<IsBST(pRoot);
+	
+	cout<<endl<<"##########################################################################################################"<<endl;
+	
+	cout<<endl<<"LCA of 1 and 3  :: "<<LCA(pRoot,1,3)->data<<endl;
+
+	cout<<endl<<"LCA of 1 and 7  :: "<<LCA(pRoot,1,7)->data<<endl;
+	
+	cout<<endl<<"##########################################################################################################"<<endl;
+
+	cout<<endl<<"ISucc of 1 :: "<<ISucc(pRoot,pRoot->left->left)->data<<endl;
+	
+	cout<<endl<<"ISucc of 6 :: "<<ISucc(pRoot,pRoot->right)->data<<endl;
+	
+	cout<<endl<<"##########################################################################################################"<<endl;
+	
+	cout<<"5th Order value :: "<<Kth(pRoot,5)<<endl; 
+	
+	cout<<"3rd Order value :: "<<Kth(pRoot,3)<<endl;
+	
+	cout<<"4th Order value :: "<<Kth(pRoot,4)<<endl;
+	
+	cout<<endl<<"##########################################################################################################"<<endl;
+	
+	int pre[] = {10,5,1,7,40,50};
+	
+	bstNode* pPRoot = ConstructBstFromPreOrder(pre,6);
+	
+	cout<<endl<<"Inorder traversal of Constructed tree ::"<<endl;
+	Inorder(pPRoot);
+	
+	cout<<endl<<"Preorder traversal of Constructed tree ::"<<endl;
+	Preorder(pPRoot);
+
+	cout<<endl<<"##########################################################################################################"<<endl;
+	return 0;
 }
