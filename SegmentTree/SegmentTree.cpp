@@ -1,3 +1,4 @@
+//http://codeforces.com/blog/entry/18051
 #include<iostream>
 using namespace std;
 
